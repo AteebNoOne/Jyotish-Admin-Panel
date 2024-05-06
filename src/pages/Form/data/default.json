@@ -1,0 +1,19 @@
+{
+    "title": "Establishment of the non-conformance",
+    "block": [
+        {
+            "block_row": [
+                "Item name:",
+                "Reported by:",
+                "Date:"
+            ]
+        },
+        {
+            "block_row": [
+                "Item no:",
+                "Lot-no:"
+            ]
+        }
+    ],
+    "block_id": "default"
+}

@@ -1,0 +1,24 @@
+
+    {
+        "block_id":1,
+        "title": "Problem description:",
+        "block": [
+            {
+      
+                "block_feilds":[
+                    {"type":"input","name":"Test","value":""},
+                    {"type":"select","options":["Hello","World"],"name":"Ateeb","value":""},
+                    {"type":"textarea","name":"Text Area","value":""}
+                    
+                ]
+            },
+            {
+                "block_row": [
+                    {
+                        "Date": "date",
+                        "Completed_by": "user_id"
+                    }
+                ]
+            }
+        ]
+    }

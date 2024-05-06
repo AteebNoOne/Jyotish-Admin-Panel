@@ -1,0 +1,85 @@
+{
+    "formname": "Test",
+    "form_id": "test_form",
+    "sections": [
+            {
+                "header": "Establishment of the non-conformance",
+                "data": [
+                    {
+                        "row1": [
+                            "Column 1",
+                            "Column 2",
+                            "Column 3"
+                        ]
+                    },
+                    {
+                        "row2": [
+                            "Column 1",
+                            "Column 2"
+                        ]
+                    }
+                ],
+                "id": "default"
+            },
+            {
+                "header": "Information",
+                "data": [
+                    {
+                        "specialRow": [
+                            {
+                                "type": "input",
+                                "name": "Name"
+                            },
+                            {
+                                "type": "select",
+                                "options": [
+                                    "1",
+                                    "2"
+                                ],
+                                "name": "Sex"
+                            },
+                            {
+                                "type": "textarea",
+                                "name": "Descriptions"
+                            }
+                        ]
+                    },
+                    {
+                        "row1": [
+                            "Date:",
+                            "Completed by:"
+                        ]
+                    }
+                ],
+                "id": "lzmmhV"
+            },
+            {
+                "header": "Interest",
+                "data": [
+                    {
+                        "specialRow": [
+                            {
+                                "type": "select",
+                                "options": [
+                                    "1",
+                                    "2"
+                                ],
+                                "name": "List"
+                            },
+                            {
+                                "type": "textarea",
+                                "name": "Desc"
+                            }
+                        ]
+                    },
+                    {
+                        "row1": [
+                            "Date:",
+                            "Completed by:"
+                        ]
+                    }
+                ],
+                "id": "jTqzzB"
+            }
+    ]
+}
