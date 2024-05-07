@@ -78,10 +78,10 @@ const FormsTable = () => {
                     <thead>
                         <tr className="bg-gray-2 text-left dark:bg-meta-4">
                             <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                                Form Name
+                                Name
                             </th>
                             <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                                Response ID
+                                Transaction ID
                             </th>
                             {/* <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
                                 Response Data
@@ -192,7 +192,7 @@ const FormsTable = () => {
 const Responses = () => {
     return (
         <DefaultLayout>
-            <Breadcrumb pageName="Forms" />
+            <Breadcrumb pageName="Astrologers Payments" />
             <FormsTable />
         </DefaultLayout>
     );

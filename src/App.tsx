@@ -20,6 +20,10 @@ import SubmitForm from './pages/Form/SubmitForm'
 import ViewResponses from './pages/Form/ViewResponses'
 import Forms from './pages/Form/Forms';
 import Responses from './pages/Form/Responses';
+import TopRatedAstrologers from './pages/Dashboard/TopRatedAstrologers';
+import CompareAstrologers from './pages/Dashboard/CompareAstrologers';
+import BestAstrologers from './pages/Dashboard/BestAstrologers';
+import AstrologersWithMaxOrders from './pages/Dashboard/AstrologersWithMaxOrders';
 
 
 
@@ -27,6 +31,7 @@ function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
 
+  const [authenticated, setAuthenticated] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -44,8 +49,64 @@ function App() {
           index
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Kestrotalk Dashboard | Kestrotalk - Admin Dashboard" />
               <ECommerce />
+            </>
+          }
+        />
+        <Route
+          path='/astrologers/best'
+          element={
+            <>
+              <PageTitle title="Best Astrologers | Kestrotalk - Admin Dashboard" />
+              <BestAstrologers />
+            </>
+          }
+        />
+        <Route
+          path='/astrologers/maximum-orders'
+          element={
+            <>
+              <PageTitle title="Astrologers With Maximum Orders | Kestrotalk - Admin Dashboard" />
+              <AstrologersWithMaxOrders />
+            </>
+          }
+        />
+        <Route
+          path='/astrologers/top'
+          element={
+            <>
+              <PageTitle title="Top Rated Astrologers | Kestrotalk - Admin Dashboard" />
+              <TopRatedAstrologers />
+            </>
+          }
+        />
+        <Route
+          path='/astrologers/compare'
+          element={
+            <>
+              <PageTitle title="Compare Astrologers | Kestrotalk - Admin Dashboard" />
+              <CompareAstrologers />
+            </>
+          }
+        />
+
+        <Route
+          path='/astrologers/calls'
+          element={
+            <>
+              <PageTitle title="Calls List Astrologers | Kestrotalk - Admin Dashboard" />
+              <CompareAstrologers />
+            </>
+          }
+        />
+
+        <Route
+          path='/astrologers/hide'
+          element={
+            <>
+              <PageTitle title="Hide Astrologers Panel | Kestrotalk - Admin Dashboard" />
+              <CompareAstrologers />
             </>
           }
         />
@@ -53,7 +114,7 @@ function App() {
           path="/calendar"
           element={
             <>
-              <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Calendar | Kestrotalk - Admin Dashboard" />
               <Calendar />
             </>
           }
@@ -62,7 +123,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Profile | Kestrotalk - Admin Dashboard" />
               <Profile />
             </>
           }
@@ -76,8 +137,17 @@ function App() {
             </>
           }
         />
+                <Route
+          path="/payments/astrologers"
+          element={
+            <>
+              <PageTitle title="Responses" />
+              <Responses />
+            </>
+          }
+        />
         <Route
-          path="/forms/form"
+          path="/payments/users"
           element={
             <>
               <PageTitle title="Form" />
@@ -94,16 +164,8 @@ function App() {
             </>
           }
         />
-                <Route
-          path="/forms/responses"
-          element={
-            <>
-              <PageTitle title="Responses" />
-              <Responses />
-            </>
-          }
-        />
-                        <Route
+
+        <Route
           path="/forms/response"
           element={
             <>
@@ -116,7 +178,7 @@ function App() {
           path="/forms/form-layout"
           element={
             <>
-              <PageTitle title="Form Layout | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Form Layout | Kestrotalk - Admin Dashboard" />
               <FormLayout />
             </>
           }
@@ -125,16 +187,16 @@ function App() {
           path="/tables"
           element={
             <>
-              <PageTitle title="Tables | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Tables | Kestrotalk - Admin Dashboard" />
               <Tables />
             </>
           }
         />
         <Route
-          path="/settings"
+          path="pages/settings"
           element={
             <>
-              <PageTitle title="Settings | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Settings | Kestrotalk - Admin Dashboard" />
               <Settings />
             </>
           }
@@ -143,7 +205,7 @@ function App() {
           path="/chart"
           element={
             <>
-              <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Basic Chart | Kestrotalk - Admin Dashboard" />
               <Chart />
             </>
           }
@@ -152,7 +214,7 @@ function App() {
           path="/ui/alerts"
           element={
             <>
-              <PageTitle title="Alerts | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Alerts | Kestrotalk - Admin Dashboard" />
               <Alerts />
             </>
           }
@@ -161,7 +223,7 @@ function App() {
           path="/ui/buttons"
           element={
             <>
-              <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Buttons | Kestrotalk - Admin Dashboard" />
               <Buttons />
             </>
           }
@@ -170,21 +232,21 @@ function App() {
           path="/auth/signin"
           element={
             <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signin | Kestrotalk - Admin Dashboard" />
               <SignIn />
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/auth/signup"
           element={
             <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Signup | Kestrotalk - Admin Dashboard" />
               <SignUp />
             </>
           }
           
-        />
+        /> */}
       </Routes>
     </>
   );
