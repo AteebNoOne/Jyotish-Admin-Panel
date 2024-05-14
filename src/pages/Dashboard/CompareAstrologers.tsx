@@ -20,14 +20,14 @@ const SelectDropDown = ({ options, label,value, setSelected }) => {
           id={`user-assignment`}
           value={value}
           onChange={handleChange}
-          className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-5 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+          className="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent py-3 px-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
         >
 
           <option value="" disabled className="text-body dark:text-bodydark ">
             Select
           </option>
           {options.map((option, index) => (
-            <option key={index} value={option} className="text-body dark:text-bodydark">
+            <option key={index} value={option} className="p-3 text-body dark:text-bodydark">
               {option}
             </option>
           ))}
