@@ -4,7 +4,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
 import SignIn from './pages/Authentication/SignIn';
-import SignUp from './pages/Authentication/SignUp';
 import Calendar from './pages/Calendar';
 import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
@@ -24,6 +23,7 @@ import TopRatedAstrologers from './pages/Dashboard/TopRatedAstrologers';
 import CompareAstrologers from './pages/Dashboard/CompareAstrologers';
 import BestAstrologers from './pages/Dashboard/BestAstrologers';
 import AstrologersWithMaxOrders from './pages/Dashboard/AstrologersWithMaxOrders';
+import AllAstrologers from './pages/Dashboard/AllAstrologers';
 
 
 
@@ -51,6 +51,15 @@ function App() {
             <>
               <PageTitle title="Kestrotalk Dashboard | Kestrotalk - Admin Dashboard" />
               <ECommerce />
+            </>
+          }
+        />
+                <Route
+          path='/astrologers/all'
+          element={
+            <>
+              <PageTitle title="All Astrologers | Kestrotalk - Admin Dashboard" />
+              <AllAstrologers />
             </>
           }
         />
