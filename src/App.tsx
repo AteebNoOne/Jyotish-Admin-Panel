@@ -24,6 +24,7 @@ import CompareAstrologers from './pages/Dashboard/CompareAstrologers';
 import BestAstrologers from './pages/Dashboard/BestAstrologers';
 import AstrologersWithMaxOrders from './pages/Dashboard/AstrologersWithMaxOrders';
 import AllAstrologers from './pages/Dashboard/AllAstrologers';
+import Astrologer from './pages/Dashboard/Astrologer';
 
 
 
@@ -54,12 +55,22 @@ function App() {
             </>
           }
         />
-                <Route
+        <Route
           path='/astrologers/all'
           element={
             <>
               <PageTitle title="All Astrologers | Kestrotalk - Admin Dashboard" />
               <AllAstrologers />
+            </>
+          }
+        />
+
+<Route
+          path='/astrologers/view'
+          element={
+            <>
+              <PageTitle title="View Astrologer | Kestrotalk - Admin Dashboard" />
+              <Astrologer />
             </>
           }
         />
@@ -146,7 +157,7 @@ function App() {
             </>
           }
         />
-                <Route
+        <Route
           path="/payments/astrologers"
           element={
             <>

@@ -32,10 +32,10 @@ export const getAllAstrologers = async () => {
 
 export const getAstrologerById = async (id: number) => {
     try {
-        const response: AxiosResponse = await axios.get(`${API_URL}/astrologer-profile/${id}`, {
+        const response: AxiosResponse = await axios.get(`${API_URL}/astrologer-profile/${id}/`, {
             headers: generateHeaders()
         });
-        return response.data.data;
+        return response.data;
     } catch (error) {
         console.error("Error fetching astrologer by ID:", error);
         throw error; 
@@ -69,12 +69,12 @@ export const updateAstrologer = async (id: string, astrologerData: any) => {
 };
 
 
-export const deleteAstrologer = async (id: string) => {
+export const deleteAstrologer = async (id: number) => {
     try {
-        const response: AxiosResponse = await axios.delete(`${API_URL}/astrologer-profile/${id}`, {
+        const response: AxiosResponse = await axios.delete(`${API_URL}/astrologer-profile/${id}/`, {
             headers: generateHeaders()
         });
-        return response.data.data;
+        return response.data;
     } catch (error) {
         console.error("Error deleting astrologer:", error);
         throw error; 

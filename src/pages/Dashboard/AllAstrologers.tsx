@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DefaultLayout from '../../layout/DefaultLayout';
 import { ASTROLOGER } from '../../types/astrologer';
-import { getAllAstrologers, getAstrologerById } from '../../api';
+import { deleteAstrologer, getAllAstrologers } from '../../api';
 import { Link } from 'react-router-dom';
 import Loader from '../../common/Loader';
 
@@ -9,15 +9,13 @@ import Loader from '../../common/Loader';
 const AllAstrologers: React.FC = () => {
     const [astrologersData, setAstrologersData] = useState<ASTROLOGER[]>([]);
     const [loading,setLoading] = useState<boolean>(false)
-    useEffect(() => {
-        fetchAstrologers();
-    }, []);
+
 
     const fetchAstrologers = async () => {
         try {
             setLoading(true)
             const fetchData: ASTROLOGER[] = await getAllAstrologers();
-            console.log(fetchData)
+            // console.log(fetchData)
             setAstrologersData(fetchData);
             setLoading(false)
         } catch (error) {
@@ -30,8 +28,9 @@ const AllAstrologers: React.FC = () => {
 
         try {
             setLoading(true)
-            const fetchData =  await getAstrologerById(id)
-            console.log("BY ID ",fetchData)
+            const response =  await deleteAstrologer(id)
+            console.log("Delete response ",response)
+            fetchAstrologers()
             setLoading(false)
         } catch (error) {
             console.error("Error fetching astrologer by id:", error);
@@ -39,6 +38,10 @@ const AllAstrologers: React.FC = () => {
 
  
     }
+
+    useEffect(() => {
+        fetchAstrologers();
+    }, []);
 
     if(loading){
         return(
@@ -53,6 +56,7 @@ const AllAstrologers: React.FC = () => {
                         All Astrologers
                     </h4>
 
+                  
                     <div className="flex flex-col">
 
                         <div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
@@ -103,10 +107,10 @@ const AllAstrologers: React.FC = () => {
                             >
                                 <div className="flex items-center gap-3 p-2.5 xl:p-5">
                                     <div className="flex-shrink-0">
-                                        <img src={astrologer.profile_picture} width={50} alt="User" />
+                                        {astrologer.profile_picture ? <img src={astrologer.profile_picture} width={50} alt="User" /> : <p>!Image</p>}
                                     </div>
                                     <p className="hidden text-black dark:text-white sm:block">
-                                        {astrologer.name}
+                                        {astrologer.name ? astrologer.name : "!Name"}
                                     </p>
                                 </div>
 
@@ -116,8 +120,10 @@ const AllAstrologers: React.FC = () => {
                                     </p>
                                 </div>
 
+
+                                    
                                 <div className="flex items-center justify-center p-2.5 xl:p-5">
-                                    <p className="text-meta-3">{astrologer.years_of_experience} Years</p>
+                                    <p className="text-meta-3">{astrologer.years_of_experience ? astrologer.years_of_experience + " Years" : "N/a"} </p>
                                 </div>
 
 
@@ -125,9 +131,9 @@ const AllAstrologers: React.FC = () => {
                                 <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
                                     <p className="text-meta-5">{astrologer.total_number_of_orders ? astrologer.total_number_of_orders : "N/a"}</p>
                                 </div>
-                                <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
+                                <div className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                                     <div className="flex items-center space-x-3.5">
-                                        <Link to={`/forms/submit-form?id=${astrologer.id}`} className="hover:text-primary">
+                                        <Link to={`/astrologers/view?id=${astrologer.id}`} className="hover:text-primary">
                                             <svg
                                                 className="fill-current"
                                                 width="18"
@@ -193,7 +199,7 @@ const AllAstrologers: React.FC = () => {
                                             </svg>
                                         </button>
                                     </div>
-                                </td>
+                                </div>
                             </div>
                         ))}
                     </div>
