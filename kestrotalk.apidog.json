@@ -1,0 +1,3402 @@
+{
+    "apidogProject": "1.0.0",
+    "$schema": {
+        "app": "apidog",
+        "type": "project",
+        "version": "1.2.0"
+    },
+    "info": {
+        "name": "kestrotalk",
+        "description": "",
+        "mockRule": {}
+    },
+    "apiCollection": [
+        {
+            "name": "Root",
+            "id": 1000787,
+            "auth": {},
+            "parentId": 0,
+            "serverId": "",
+            "description": "",
+            "identityPattern": {
+                "httpApi": {
+                    "type": "methodAndPath",
+                    "bodyType": "",
+                    "fields": []
+                }
+            },
+            "preProcessors": [
+                {
+                    "id": "inheritProcessors",
+                    "type": "inheritProcessors",
+                    "data": {}
+                }
+            ],
+            "postProcessors": [
+                {
+                    "id": "inheritProcessors",
+                    "type": "inheritProcessors",
+                    "data": {}
+                }
+            ],
+            "inheritPostProcessors": {},
+            "inheritPreProcessors": {},
+            "items": [
+                {
+                    "name": "accounts",
+                    "id": 1000788,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": [
+                        {
+                            "name": "update profile",
+                            "api": {
+                                "id": "6035167",
+                                "method": "patch",
+                                "path": "{{url}}/account/update-profile//",
+                                "parameters": {
+                                    "query": [
+                                        {
+                                            "name": "status",
+                                            "description": "Status values that need to be considered for filter",
+                                            "required": true,
+                                            "id": "j8whk7JJ0U",
+                                            "type": "string",
+                                            "enable": true
+                                        }
+                                    ],
+                                    "path": []
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5344162",
+                                        "name": "OK",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/1574032"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": "5344163",
+                                        "name": "Invalid status value",
+                                        "code": 400,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "code": {
+                                                    "type": "integer",
+                                                    "mock": {
+                                                        "mock": "400"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "code"
+                                            ],
+                                            "x-apidog-orders": [
+                                                "code"
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [
+                                    {
+                                        "name": "Success example",
+                                        "data": "{\n    \"code\": 0,\n    \"data\": [\n        {\n            \"name\": \"Hello Kitty\",\n            \"photoUrls\": [\n                \"http://dummyimage.com/400x400\"\n            ],\n            \"id\": 3,\n            \"category\": {\n                \"id\": 71,\n                \"name\": \"Cat\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 22,\n                    \"name\": \"Cat\"\n                }\n            ],\n            \"status\": \"sold\"\n        },\n        {\n            \"name\": \"White Dog\",\n            \"photoUrls\": [\n                \"http://dummyimage.com/400x400\"\n            ],\n            \"id\": 3,\n            \"category\": {\n                \"id\": 71,\n                \"name\": \"Dog\"\n            },\n            \"tags\": [\n                {\n                    \"id\": 22,\n                    \"name\": \"Dog\"\n                }\n            ],\n            \"status\": \"sold\"\n        }\n    ]\n}",
+                                        "responseId": 5344162,
+                                        "ordering": 1
+                                    }
+                                ],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "2002002002",
+                                            "type": "integer",
+                                            "id": "cnt9GbcOqr",
+                                            "example": "2002002002",
+                                            "enable": true,
+                                            "name": "phone_no",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "boolean",
+                                            "id": "x4I4BxasxM",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "user",
+                                            "schema": {
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "boolean",
+                                            "id": "zhZFmA8Dtb",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "admin",
+                                            "schema": {
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "boolean",
+                                            "id": "msKd0zsolE",
+                                            "example": "True",
+                                            "enable": true,
+                                            "name": "astrologer",
+                                            "schema": {
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "admin12",
+                                            "type": "string",
+                                            "id": "ZMbbukhTgT",
+                                            "example": "admin12",
+                                            "enable": true,
+                                            "name": "password"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "UuvwjtTl3M",
+                                            "example": "admin",
+                                            "enable": true,
+                                            "name": "first_name"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "5WAJJ37T0z",
+                                            "example": "admin",
+                                            "enable": true,
+                                            "name": "last_name"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [
+                                    "pet"
+                                ],
+                                "status": "released",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 24,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5344162",
+                                    "BLANK.5344163"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "profile",
+                            "api": {
+                                "id": "6356979",
+                                "method": "get",
+                                "path": "{{url}}/account/profile/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5855546",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 44,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5855546"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "register api",
+                            "api": {
+                                "id": "6406594",
+                                "method": "post",
+                                "path": "{{url}}account/register/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "noauth"
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5942368",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "UgIABJTrlH",
+                                            "example": "1000100010",
+                                            "enable": true,
+                                            "name": "phone_no"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 74,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5942368"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "OTP verfication api",
+                            "api": {
+                                "id": "6406669",
+                                "method": "post",
+                                "path": "{{url}}account/verify-otp/",
+                                "parameters": {},
+                                "auth": {},
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5942666",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "Xwk3Nd1DJq",
+                                            "example": "1000010000",
+                                            "enable": true,
+                                            "name": "phone_no"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "OxWflNomSF",
+                                            "example": "000000",
+                                            "enable": true,
+                                            "name": "otp"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 84,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5942666"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "resend otp",
+                            "api": {
+                                "id": "6406770",
+                                "method": "post",
+                                "path": "{{url}}account/resend-otp/",
+                                "parameters": {},
+                                "auth": {},
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5942848",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "Y8lssJL2Sf",
+                                            "example": "1000010000",
+                                            "enable": true,
+                                            "name": "phone_no"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "KcpXC2WVA9",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "otp"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 94,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5942848"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Astrologer",
+                    "id": 1080215,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": [
+                        {
+                            "name": "Astrologer profile creation",
+                            "api": {
+                                "id": "6357893",
+                                "method": "get",
+                                "path": "{{url}}/astrologer/astrologer-profile/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5856710",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "here upload the image",
+                                            "type": "file",
+                                            "id": "ZXBxfGP1Ad",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "profile_picture",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "4kzWbgCgUM",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "years_of_experience",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "af2lHS6spM",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "charges_per_min",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "AA5ZhtgM9c",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "language"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "heQXlDxf1Y",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "specialization"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "j0kEaULB4M",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "total_number_of_orders",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "41YKFFlcbI",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "total_number_of_min_chat_with_user",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "LlEI4SY0fj",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "total_number_of_call_chat_with_user",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "cKYqm2HL2A",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "bio"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "sp1lnSWBAF",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "certificate_of_astrology",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "DehcvgyU4h",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "profile_picture1",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "cAFk1o9EE8",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "profile_picture2",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "E2MHCyYdRe",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "profile_picture3",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "hRTw1P8nWu",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "profile_picture4",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "H4XYYz5YTU",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "country"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "zjShogpY2v",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "state"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "C73NXI4Eub",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "address"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "9zj5Fp5Rho",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "highest_qualification"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "PBYm4m4gef",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "degree"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "YsCCrIChR3",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "School_college_university"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "UABq1gBgV6",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "form_where_learn_astrologer"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "H4kf9UDTmd",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "instagram"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "hIIK9NVyf5",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "facebook"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "hfMEDTEFaH",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "linkdin"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "smp4QstmxG",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "youtube_channel"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "E5zNI8Fv3w",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "website"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 10,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5856710"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "astrologer reviews",
+                            "api": {
+                                "id": "6358053",
+                                "method": "get",
+                                "path": "{{url}}/astrologer/reviews/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5856901",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "Here you have to pass the id of astrologer",
+                                            "type": "integer",
+                                            "id": "kG1ijlzkSt",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "astrologer_reviews",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "j2XV4daFQ7",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "user_profile"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "vad9vljQ0P",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "review"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "oMjJF2yQkE",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "rating",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 20,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5856901"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "category",
+                            "api": {
+                                "id": "6376486",
+                                "method": "get",
+                                "path": "{{url}}/astrologer/category/",
+                                "parameters": {
+                                    "path": []
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5893476",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 30,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5893476"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "astrologer filter by category",
+                            "api": {
+                                "id": "6397854",
+                                "method": "get",
+                                "path": "{{url}}astrologer/filter-astrologer/",
+                                "parameters": {
+                                    "query": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "mmmdiFhVaJ",
+                                            "enable": true,
+                                            "name": "category_name",
+                                            "example": "love"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "4yYbCWM87e",
+                                            "enable": true,
+                                            "name": "language",
+                                            "example": "sanskrit"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "WogG72mqs1",
+                                            "enable": true,
+                                            "name": "specialization"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "Pd9io543AE",
+                                            "enable": true,
+                                            "name": "country"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "boolean",
+                                            "id": "59WXRTiTiq",
+                                            "enable": true,
+                                            "name": "top_choice",
+                                            "schema": {
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "boolean",
+                                            "id": "SyGH1BbBnS",
+                                            "enable": true,
+                                            "name": "celebrity",
+                                            "schema": {
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "boolean",
+                                            "id": "koO80zN2fQ",
+                                            "enable": true,
+                                            "name": "rising_star",
+                                            "schema": {
+                                                "type": "boolean"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "wungCnCteu",
+                                            "enable": true,
+                                            "name": "gender",
+                                            "schema": {
+                                                "type": "string"
+                                            },
+                                            "example": ""
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "Here - represent decresing and + means increasing",
+                                            "type": "array",
+                                            "id": "7BfVb6g4MB",
+                                            "enable": true,
+                                            "name": "ordering",
+                                            "example": [
+                                                "-years_of_experience",
+                                                "-total_number_of_orders",
+                                                "-charges_per_min",
+                                                "rating"
+                                            ],
+                                            "schema": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5921098",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 40,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5921098"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "top of the astrologer",
+                            "api": {
+                                "id": "6399110",
+                                "method": "patch",
+                                "path": "{{url}}astrologer/astrologer-profile/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5922497",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 50,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5922497"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "follow astrologer for user",
+                            "api": {
+                                "id": "6419868",
+                                "method": "get",
+                                "path": "{{url}}astrologer/astro-follow/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5968318",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "number",
+                                            "id": "Kwukx1QBZq",
+                                            "example": "1",
+                                            "enable": true,
+                                            "name": "astrologer_follow",
+                                            "schema": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 60,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5968318"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "reviews according to astrologer",
+                            "api": {
+                                "id": "6933181",
+                                "method": "patch",
+                                "path": "{{url}}/astrologer/reviews/filter/22/",
+                                "parameters": {
+                                    "query": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "vKaAut2d3F",
+                                            "enable": true,
+                                            "name": "astrologer_id",
+                                            "example": "1"
+                                        }
+                                    ]
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "6770588",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "bn9F90kxeN",
+                                            "example": "thanks",
+                                            "enable": true,
+                                            "name": "reply"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 70,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.6770588"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "astrologer personal api",
+                            "api": {
+                                "id": "7250194",
+                                "method": "get",
+                                "path": "{{urls}}astrologer/reviews/personal/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7276006",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 80,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7276006"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "followers to get astrologer",
+                            "api": {
+                                "id": "7250789",
+                                "method": "get",
+                                "path": "{{url}}/astrologer/user-follow/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7276731",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "pass the forigen key",
+                                            "type": "number",
+                                            "id": "ssMlFOzG5U",
+                                            "example": "1",
+                                            "enable": false,
+                                            "name": "user_profile",
+                                            "schema": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 90,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7276731"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "particular astrologer for astrologer app",
+                            "api": {
+                                "id": "7251225",
+                                "method": "patch",
+                                "path": "{{url}}/astrologer/astrologer-particular/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7278409",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "QjwAX3usQl",
+                                            "example": "Naman",
+                                            "enable": true,
+                                            "name": "name"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 100,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7278409"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "User profile",
+                    "id": 1080792,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": [
+                        {
+                            "name": "user profile",
+                            "api": {
+                                "id": "6358201",
+                                "method": "post",
+                                "path": "{{url}}/user/user-profile/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5857059",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "l2w9D53N7o",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "profile_picture",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "d1ct4BT7Jg",
+                                            "example": "Naman Garg",
+                                            "enable": true,
+                                            "name": "full_name"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "5Mt6of7jR8",
+                                            "example": "11-09-1000",
+                                            "enable": true,
+                                            "name": "date_of_birth"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "ES2zJ0YyNW",
+                                            "example": "12:12:12",
+                                            "enable": true,
+                                            "name": "time_of_birth"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "5ifW55EClY",
+                                            "example": "Delhi",
+                                            "enable": true,
+                                            "name": "place_of_birth"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "jlTq884u89",
+                                            "example": "Dekhi",
+                                            "enable": true,
+                                            "name": "current_address"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "VSs8WU4ydA",
+                                            "example": "1001001",
+                                            "enable": true,
+                                            "name": "pincode",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "8Tlt0uLl0G",
+                                            "example": "Male",
+                                            "enable": true,
+                                            "name": "gender"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "LzmE0TbTWj",
+                                            "example": "Delhi",
+                                            "enable": true,
+                                            "name": "city_state_address"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 10,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5857059"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "user wallet ",
+                            "api": {
+                                "id": "7265432",
+                                "method": "post",
+                                "path": "{{url}}/user/user-wallet/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7304853",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "gcEcKMSo8l",
+                                            "example": "100",
+                                            "enable": true,
+                                            "name": "amount"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "jBPMWOP6z4",
+                                            "example": "18",
+                                            "enable": true,
+                                            "name": "gst"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 20,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7304853"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ALl Blogs",
+                    "id": 1085213,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": [
+                        {
+                            "name": "get all blogs",
+                            "api": {
+                                "id": "6375299",
+                                "method": "get",
+                                "path": "{{url}}/blog/blog/",
+                                "parameters": {
+                                    "query": [],
+                                    "path": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5891527",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "id": "XnyR9wozNL",
+                                            "name": "description",
+                                            "required": true,
+                                            "description": "",
+                                            "example": "",
+                                            "type": "string",
+                                            "enable": true
+                                        },
+                                        {
+                                            "id": "UGkbhpVhDc",
+                                            "name": "views",
+                                            "required": true,
+                                            "description": "",
+                                            "example": "",
+                                            "type": "integer",
+                                            "enable": true
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "zWyJLs0C9x",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "title"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "ymVKwDuaif",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "tumbnail",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 10,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5891527"
+                                ],
+                                "maintainer": "Naman Garg",
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "latest blogs",
+                            "api": {
+                                "id": "6375317",
+                                "method": "get",
+                                "path": "{{url}}/blog/latest-blog/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5891443",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 20,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5891443"
+                                ],
+                                "maintainer": "Naman Garg",
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "blog for astrloger",
+                            "api": {
+                                "id": "7269731",
+                                "method": "get",
+                                "path": "{{url}}/blog/astro-blog/",
+                                "parameters": {},
+                                "auth": {},
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7310766",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 30,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7310766"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Pooja",
+                    "id": 1085223,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": [
+                        {
+                            "name": "book pooja",
+                            "api": {
+                                "id": "6376870",
+                                "method": "get",
+                                "path": "{{url}}pooja/book-pooja/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5894000",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "aaRsdBDdiO",
+                                            "example": "10",
+                                            "enable": true,
+                                            "name": "seats",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "Here we have to upload the time  12:12:12",
+                                            "type": "integer",
+                                            "id": "QBtI4oR4VN",
+                                            "example": "12:12:12",
+                                            "enable": true,
+                                            "name": "time",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "file",
+                                            "id": "V5szAWAfog",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "tumbnail",
+                                            "schema": {
+                                                "format": "binary",
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "integer",
+                                            "id": "XfyXO4Tuvc",
+                                            "example": "1000",
+                                            "enable": true,
+                                            "name": "price",
+                                            "schema": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "Here we have to write the text editor to upload full blog type",
+                                            "type": "string",
+                                            "id": "K5dyO7u0xh",
+                                            "example": "Hello how are u?",
+                                            "enable": true,
+                                            "name": "description"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "Eqldp1u99U",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "title"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 10,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5894000"
+                                ],
+                                "maintainer": "Naman Garg",
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "Join pooja",
+                            "api": {
+                                "id": "6407058",
+                                "method": "post",
+                                "path": "{{url}}pooja/join-pooja/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "5943273",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 20,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.5943273"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "astrologer pooja",
+                            "api": {
+                                "id": "7269737",
+                                "method": "get",
+                                "path": "{{url}}/pooja/astro-pooja/",
+                                "parameters": {},
+                                "auth": {},
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7311282",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 30,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7311282"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "kundli",
+                    "id": 1274261,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": [
+                        {
+                            "name": "daily horisocpe",
+                            "api": {
+                                "id": "7080588",
+                                "method": "get",
+                                "path": "{{urls}}/kundali/daily-prediction/",
+                                "parameters": {
+                                    "query": [
+                                        {
+                                            "id": "fPYiWKDwnM",
+                                            "name": "day",
+                                            "example": "today",
+                                            "required": false,
+                                            "description": "",
+                                            "enable": true,
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "path": []
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2NDMxNzY0LCJpYXQiOjE3MTQ4OTU3NjQsImp0aSI6ImQ4ODkyOWI2MWVjOTRiZWRiMDFjMGIyZjUwN2QxOTQ1IiwidXNlcl9pZCI6MzF9.kQ5WjJWkU3mu2Omi1MET6dpucRMSoVklMmpE5b5OzpM"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7026115",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "none",
+                                    "parameters": []
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 10,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7026115"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "match",
+                            "api": {
+                                "id": "7286824",
+                                "method": "post",
+                                "path": "{{url}}/kundali/match/",
+                                "parameters": {
+                                    "path": []
+                                },
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7340596",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "application/json",
+                                    "parameters": [],
+                                    "jsonSchema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "01HXSPR5RTWCGZRWXATEJ4P4GF": {
+                                                "x-tmp-pending-properties": true
+                                            }
+                                        },
+                                        "x-apidog-orders": [
+                                            "01HXSPR5RTWCGZRWXATEJ4P4GF"
+                                        ],
+                                        "required": [
+                                            "01HXSPR5RTWCGZRWXATEJ4P4GF"
+                                        ]
+                                    },
+                                    "example": "{\r\n    \"boy_dob\":\"16-03-1994\",\r\n\"boy_tob\":\"10:30\",\r\n\"boy_tz\":5.5,\r\n\"boy_lat\":55,\r\n\"boy_long\":73,\r\n\"girl_dob\":\"22-04-1994\",\r\n\"girl_tob\":\"05:25\",\r\n\"girl_tz\":5.5,\r\n\"girl_lat\":12,\r\n\"girl_long\":11,\r\n\"match_type\":\"North\"\r\n}"
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 30,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7340596"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "numerology",
+                            "api": {
+                                "id": "7293274",
+                                "method": "post",
+                                "path": "{{url}}/kundli/numerology/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7349198",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "PAAVNAqc3h",
+                                            "example": "Naman garg",
+                                            "enable": true,
+                                            "name": "name"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "7zmy2rLcWU",
+                                            "example": "11-08-2000",
+                                            "enable": true,
+                                            "name": "date"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 40,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7349198"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        },
+                        {
+                            "name": "planet details",
+                            "api": {
+                                "id": "7293306",
+                                "method": "post",
+                                "path": "{{url}}/kundali/planet-details/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7347381",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "application/json",
+                                    "parameters": [],
+                                    "jsonSchema": {
+                                        "type": "object",
+                                        "properties": {}
+                                    },
+                                    "example": "{\r\n    \"dob\":\"16-03-1994\",\r\n\"tob\":\"10:30\",\r\n\"tz\":5.5,\r\n\"lat\":55,\r\n\"lon\":73\r\n}"
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 50,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7347381"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Chat api sockets",
+                    "id": 1317868,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": []
+                },
+                {
+                    "name": "offers",
+                    "id": 1323379,
+                    "auth": {},
+                    "parentId": 0,
+                    "serverId": "",
+                    "description": "",
+                    "identityPattern": {
+                        "httpApi": {
+                            "type": "inherit",
+                            "bodyType": "",
+                            "fields": []
+                        }
+                    },
+                    "preProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "postProcessors": [
+                        {
+                            "id": "inheritProcessors",
+                            "type": "inheritProcessors",
+                            "data": {}
+                        }
+                    ],
+                    "inheritPostProcessors": {},
+                    "inheritPreProcessors": {},
+                    "items": [
+                        {
+                            "name": "offers api",
+                            "api": {
+                                "id": "7295261",
+                                "method": "post",
+                                "path": "{{url}}/offers/offer/",
+                                "parameters": {},
+                                "auth": {
+                                    "type": "bearer",
+                                    "bearer": {
+                                        "token": "{{token}}"
+                                    }
+                                },
+                                "commonParameters": {
+                                    "query": [],
+                                    "body": [],
+                                    "cookie": [],
+                                    "header": []
+                                },
+                                "responses": [
+                                    {
+                                        "id": "7353822",
+                                        "name": "Success",
+                                        "code": 200,
+                                        "contentType": "json",
+                                        "jsonSchema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        }
+                                    }
+                                ],
+                                "responseExamples": [],
+                                "requestBody": {
+                                    "type": "multipart/form-data",
+                                    "parameters": [
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "5TlpfdCoi7",
+                                            "example": "75",
+                                            "enable": true,
+                                            "name": "offer_name"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "o1Vrdx6etg",
+                                            "example": "Damka sale",
+                                            "enable": true,
+                                            "name": "display_name"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "bU8f0m73sC",
+                                            "example": "20",
+                                            "enable": true,
+                                            "name": "percentage_off"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "hUHbePfQzF",
+                                            "example": "True",
+                                            "enable": true,
+                                            "name": "active"
+                                        },
+                                        {
+                                            "required": false,
+                                            "description": "",
+                                            "type": "string",
+                                            "id": "VqA9m11S1T",
+                                            "example": "",
+                                            "enable": true,
+                                            "name": "delete"
+                                        }
+                                    ]
+                                },
+                                "description": "",
+                                "tags": [],
+                                "status": "developing",
+                                "serverId": "",
+                                "operationId": "",
+                                "sourceUrl": "",
+                                "ordering": 10,
+                                "cases": [],
+                                "mocks": [],
+                                "customApiFields": "{}",
+                                "advancedSettings": {
+                                    "disabledSystemHeaders": {}
+                                },
+                                "mockScript": {},
+                                "codeSamples": [],
+                                "commonResponseStatus": {},
+                                "responseChildren": [
+                                    "BLANK.7353822"
+                                ],
+                                "preProcessors": [],
+                                "postProcessors": [],
+                                "inheritPostProcessors": {},
+                                "inheritPreProcessors": {}
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "socketCollection": [],
+    "docCollection": [],
+    "schemaCollection": [],
+    "responseCollection": [
+        {
+            "id": 478471,
+            "createdAt": "2024-03-10T06:27:22.000Z",
+            "updatedAt": "2024-03-10T06:27:22.000Z",
+            "deletedAt": null,
+            "name": "Root",
+            "type": "root",
+            "description": "",
+            "children": [],
+            "auth": {},
+            "projectId": 479403,
+            "projectBranchId": 0,
+            "parentId": 0,
+            "createdById": 425949,
+            "updatedById": 425949,
+            "items": [
+                {
+                    "_databaseId": 2387997,
+                    "name": "Record not found",
+                    "code": 404,
+                    "contentType": "json",
+                    "jsonSchema": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "integer"
+                            },
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "code",
+                            "message"
+                        ],
+                        "x-apidog-orders": [
+                            "code",
+                            "message"
+                        ]
+                    },
+                    "defaultEnable": false,
+                    "folderId": 0,
+                    "id": 2387997,
+                    "databaseResponseExamples": [],
+                    "responseExamples": []
+                },
+                {
+                    "_databaseId": 2387998,
+                    "name": "Invalid input",
+                    "code": 400,
+                    "contentType": "json",
+                    "jsonSchema": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "integer"
+                            },
+                            "message": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "code",
+                            "message"
+                        ],
+                        "x-apidog-orders": [
+                            "code",
+                            "message"
+                        ]
+                    },
+                    "defaultEnable": false,
+                    "folderId": 0,
+                    "id": 2387998,
+                    "databaseResponseExamples": [],
+                    "responseExamples": []
+                }
+            ]
+        }
+    ],
+    "apiTestCaseCollection": [
+        {
+            "name": "Root",
+            "children": [
+                {
+                    "name": "Default",
+                    "children": [],
+                    "items": []
+                },
+                {
+                    "name": "Pet Store",
+                    "children": [],
+                    "items": [
+                        {
+                            "steps": [
+                                {
+                                    "type": "http",
+                                    "bind": false,
+                                    "bindType": "API",
+                                    "bindId": 6035164,
+                                    "syncMode": "MANUAL",
+                                    "httpApiCase": {
+                                        "id": 7081190,
+                                        "name": "Create Pet for Sale",
+                                        "method": "",
+                                        "path": "/pet",
+                                        "auth": {},
+                                        "type": "http",
+                                        "options": {},
+                                        "parameters": {},
+                                        "responseId": 5344157,
+                                        "requestBody": {
+                                            "parameters": [
+                                                {
+                                                    "id": "ybPpcZ1dgw",
+                                                    "relatedId": "ybPpcZ1dgw",
+                                                    "relatedName": "name",
+                                                    "name": "name",
+                                                    "value": "Hello Kitty",
+                                                    "type": "string",
+                                                    "description": "Pet Name",
+                                                    "enable": true
+                                                },
+                                                {
+                                                    "id": "fDkEuKyzG4",
+                                                    "relatedId": "fDkEuKyzG4",
+                                                    "relatedName": "status",
+                                                    "name": "status",
+                                                    "value": "sold",
+                                                    "type": "string",
+                                                    "description": "Pet Sales Status",
+                                                    "enable": true
+                                                }
+                                            ],
+                                            "type": "application/x-www-form-urlencoded",
+                                            "data": ""
+                                        },
+                                        "preProcessors": [],
+                                        "postProcessors": [],
+                                        "advancedSettings": {
+                                            "disabledSystemHeaders": {}
+                                        },
+                                        "commonParameters": {},
+                                        "inheritPreProcessors": {},
+                                        "inheritPostProcessors": {},
+                                        "inheritPreProcessorsSnapshot": null,
+                                        "inheritPostProcessorsSnapshot": null,
+                                        "apiId": 6035164
+                                    }
+                                },
+                                {
+                                    "type": "http",
+                                    "bind": false,
+                                    "bindType": "API",
+                                    "bindId": 6035163,
+                                    "syncMode": "MANUAL",
+                                    "httpApiCase": {
+                                        "id": 7081189,
+                                        "name": "Query the pet just created",
+                                        "method": "",
+                                        "path": "/pet/{petId}",
+                                        "auth": {},
+                                        "type": "http",
+                                        "options": {},
+                                        "parameters": {
+                                            "path": [
+                                                {
+                                                    "id": "petId#0",
+                                                    "relatedId": "petId#0",
+                                                    "relatedName": "petId",
+                                                    "name": "petId",
+                                                    "value": "{{petId}}",
+                                                    "type": "string",
+                                                    "description": "pet ID",
+                                                    "enable": true
+                                                }
+                                            ]
+                                        },
+                                        "responseId": 5344156,
+                                        "requestBody": {
+                                            "parameters": [],
+                                            "type": "none"
+                                        },
+                                        "preProcessors": [],
+                                        "postProcessors": [],
+                                        "advancedSettings": {
+                                            "disabledSystemHeaders": {}
+                                        },
+                                        "commonParameters": {},
+                                        "inheritPreProcessors": {},
+                                        "inheritPostProcessors": {},
+                                        "inheritPreProcessorsSnapshot": null,
+                                        "inheritPostProcessorsSnapshot": null,
+                                        "apiId": 6035163
+                                    }
+                                },
+                                {
+                                    "type": "http",
+                                    "bind": false,
+                                    "bindType": "API",
+                                    "bindId": 6035165,
+                                    "syncMode": "MANUAL",
+                                    "httpApiCase": {
+                                        "id": 7081188,
+                                        "name": "Modify pet status to sold",
+                                        "method": "",
+                                        "path": "/pet",
+                                        "auth": {},
+                                        "type": "http",
+                                        "options": {},
+                                        "parameters": {},
+                                        "responseId": 5344159,
+                                        "requestBody": {
+                                            "parameters": [],
+                                            "type": "application/json",
+                                            "data": "{\n    \"name\": \"test\"\n}"
+                                        },
+                                        "preProcessors": [],
+                                        "postProcessors": [],
+                                        "advancedSettings": {
+                                            "disabledSystemHeaders": {}
+                                        },
+                                        "commonParameters": {},
+                                        "inheritPreProcessors": {},
+                                        "inheritPostProcessors": {},
+                                        "inheritPreProcessorsSnapshot": null,
+                                        "inheritPostProcessorsSnapshot": null,
+                                        "apiId": 6035165
+                                    }
+                                },
+                                {
+                                    "type": "http",
+                                    "bind": false,
+                                    "bindType": "API",
+                                    "bindId": 6035163,
+                                    "syncMode": "MANUAL",
+                                    "httpApiCase": {
+                                        "id": 7081187,
+                                        "name": "Check if your pet's status has been changed successfully",
+                                        "method": "",
+                                        "path": "/pet/{petId}",
+                                        "auth": {},
+                                        "type": "http",
+                                        "options": {},
+                                        "parameters": {
+                                            "path": [
+                                                {
+                                                    "id": "petId#0",
+                                                    "relatedId": "petId#0",
+                                                    "relatedName": "petId",
+                                                    "name": "petId",
+                                                    "value": "2",
+                                                    "type": "string",
+                                                    "description": "pet ID",
+                                                    "enable": true
+                                                }
+                                            ]
+                                        },
+                                        "responseId": 5344156,
+                                        "requestBody": {
+                                            "parameters": [],
+                                            "type": "none"
+                                        },
+                                        "preProcessors": [],
+                                        "postProcessors": [],
+                                        "advancedSettings": {
+                                            "disabledSystemHeaders": {}
+                                        },
+                                        "commonParameters": {},
+                                        "inheritPreProcessors": {},
+                                        "inheritPostProcessors": {},
+                                        "inheritPreProcessorsSnapshot": null,
+                                        "inheritPostProcessorsSnapshot": null,
+                                        "apiId": 6035163
+                                    }
+                                },
+                                {
+                                    "type": "http",
+                                    "bind": false,
+                                    "bindType": "API",
+                                    "bindId": 6035166,
+                                    "syncMode": "MANUAL",
+                                    "httpApiCase": {
+                                        "id": 7081186,
+                                        "name": "Delete the pet",
+                                        "method": "",
+                                        "path": "/pet/{petId}",
+                                        "auth": {},
+                                        "type": "http",
+                                        "options": {},
+                                        "parameters": {
+                                            "header": [
+                                                {
+                                                    "id": "tnoT7O2PBd",
+                                                    "relatedId": "tnoT7O2PBd",
+                                                    "relatedName": "api_key",
+                                                    "name": "api_key",
+                                                    "enable": true
+                                                }
+                                            ],
+                                            "path": [
+                                                {
+                                                    "id": "petId#0",
+                                                    "relatedId": "petId#0",
+                                                    "relatedName": "petId",
+                                                    "name": "petId",
+                                                    "value": "",
+                                                    "enable": true
+                                                }
+                                            ]
+                                        },
+                                        "responseId": 5344161,
+                                        "requestBody": {
+                                            "parameters": [],
+                                            "type": "none"
+                                        },
+                                        "preProcessors": [],
+                                        "postProcessors": [],
+                                        "advancedSettings": {
+                                            "disabledSystemHeaders": {}
+                                        },
+                                        "commonParameters": {},
+                                        "inheritPreProcessors": {},
+                                        "inheritPostProcessors": {},
+                                        "inheritPreProcessorsSnapshot": null,
+                                        "inheritPostProcessorsSnapshot": null,
+                                        "apiId": 6035166
+                                    }
+                                },
+                                {
+                                    "type": "http",
+                                    "bind": false,
+                                    "bindType": "API",
+                                    "bindId": 6035163,
+                                    "syncMode": "MANUAL",
+                                    "httpApiCase": {
+                                        "id": 7081185,
+                                        "name": "Check if the deletion was successful",
+                                        "method": "",
+                                        "path": "/pet/{petId}",
+                                        "auth": {},
+                                        "type": "http",
+                                        "options": {},
+                                        "parameters": {
+                                            "path": [
+                                                {
+                                                    "id": "petId#0",
+                                                    "relatedId": "petId#0",
+                                                    "relatedName": "petId",
+                                                    "name": "petId",
+                                                    "value": "1645646",
+                                                    "type": "string",
+                                                    "description": "pet ID",
+                                                    "enable": true
+                                                }
+                                            ]
+                                        },
+                                        "responseId": 2387997,
+                                        "requestBody": {
+                                            "parameters": [],
+                                            "type": "none"
+                                        },
+                                        "preProcessors": [],
+                                        "postProcessors": [],
+                                        "advancedSettings": {
+                                            "disabledSystemHeaders": {}
+                                        },
+                                        "commonParameters": {},
+                                        "inheritPreProcessors": {},
+                                        "inheritPostProcessors": {},
+                                        "inheritPreProcessorsSnapshot": null,
+                                        "inheritPostProcessorsSnapshot": null,
+                                        "apiId": 6035163
+                                    }
+                                }
+                            ],
+                            "id": 477232,
+                            "name": "Test the pet creation/modification/deletion process",
+                            "options": {},
+                            "performanceTestOptions": {},
+                            "ordering": 0,
+                            "description": "",
+                            "preProcessors": [],
+                            "postProcessors": [],
+                            "children": [],
+                            "apiTestDataSets": []
+                        }
+                    ]
+                }
+            ],
+            "items": []
+        }
+    ],
+    "testCaseReferences": [],
+    "environments": [],
+    "commonScripts": [],
+    "databaseConnections": [],
+    "globalVariables": [],
+    "commonParameters": null,
+    "projectSetting": {
+        "id": "479404",
+        "auth": {},
+        "servers": [
+            {
+                "id": "default",
+                "name": "Default Server"
+            }
+        ],
+        "gateway": [],
+        "language": "en-US",
+        "apiStatuses": [
+            "developing",
+            "testing",
+            "released",
+            "deprecated"
+        ],
+        "mockSettings": {},
+        "preProcessors": [],
+        "postProcessors": [],
+        "advancedSettings": {},
+        "initialDisabledMockIds": [],
+        "cloudMock": {
+            "security": "free",
+            "enable": false,
+            "tokenKey": "apidogToken"
+        }
+    },
+    "projectAssociations": []
+}
