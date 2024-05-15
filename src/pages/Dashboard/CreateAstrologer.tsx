@@ -12,10 +12,6 @@ const CreateAstrologers: React.FC = () => {
     name: '',
     is_verified: false,
     profile_picture: undefined,
-    profile_picture1: null,
-    profile_picture2: null,
-    profile_picture3: null,
-    profile_picture4: null,
     years_of_experience: 0,
     charges_per_min: 0,
     language: '',
@@ -26,10 +22,6 @@ const CreateAstrologers: React.FC = () => {
     address: '',
     certificate_of_astrology: '',
     gender: null,
-    call: false,
-    chat: false,
-    emergency_call: false,
-    emergency_chat: false,
     highest_qualification: null,
     degree: null,
     School_college_university: null,
@@ -41,6 +33,7 @@ const CreateAstrologers: React.FC = () => {
     website: null,
     user: ''
   });
+  const [images, setImages] = useState<File[]>([]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -50,15 +43,24 @@ const CreateAstrologers: React.FC = () => {
     }));
   };
 
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files) {
+      const selectedImages = Array.from(files).slice(0, 5);
+      setImages(selectedImages);
+    }
+  };
+
+  console.log('Images:', images);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const formDataWithImages = { ...formData, images };
     try {
-      const newAstrologer = await createAstrologer(formData as ASTROLOGER);
+      const newAstrologer = await createAstrologer(formDataWithImages as ASTROLOGER);
       console.log('New astrologer created:', newAstrologer);
-
     } catch (error) {
       console.error('Error creating astrologer:', error);
-
     }
   };
 
@@ -335,6 +337,7 @@ const CreateAstrologers: React.FC = () => {
                 <input
                   type="file"
                   accept="image/*"
+                  onChange={handleImageChange}
                   className="absolute inset-0 z-50 m-0 h-full w-full cursor-pointer p-0 opacity-0 outline-none"
                 />
                 <div className="flex flex-col items-center justify-center space-y-3">
