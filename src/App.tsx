@@ -25,6 +25,7 @@ import BestAstrologers from './pages/Dashboard/BestAstrologers';
 import AstrologersWithMaxOrders from './pages/Dashboard/AstrologersWithMaxOrders';
 import AllAstrologers from './pages/Dashboard/AllAstrologers';
 import Astrologer from './pages/Dashboard/Astrologer';
+import CreateAstrologers from './pages/Dashboard/CreateAstrologer';
 
 
 
@@ -64,8 +65,17 @@ function App() {
             </>
           }
         />
+        <Route
+          path='/astrologers/create'
+          element={
+            <>
+              <PageTitle title="Create Astrologer | Kestrotalk - Admin Dashboard" />
+              <CreateAstrologers />
+            </>
+          }
+        />
 
-<Route
+        <Route
           path='/astrologers/view'
           element={
             <>
